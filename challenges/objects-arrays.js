@@ -69,9 +69,11 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = graduates.map(function(graduates){
-  return graduates.university;
-});
+const universities = [];
+graduates.forEach(function(graduates){
+  return universities.push(graduates.university);
+})
+universities.sort();
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -87,11 +89,11 @@ console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = graduates.filter(function(graduates){
-  //if(graduates.university.indexOf('Uni') > 0){
-    //return graduates.university;
-  //}
-  return graduates.university.indexOf('Uni') > 0; 
+const uni = [];
+graduates.forEach(function(graduates){
+  if(graduates.university.indexOf('Uni') > 0){
+    uni.push(graduates.university);
+  }
 });
 console.log(uni);
 
@@ -117,8 +119,9 @@ zooAnimals = [{"animal_name":"Jackal, asiatic","population":5,"scientific_name":
 The zoo wants to display both the scientific name and the animal name in front of the habitats.  Return an array with only the animal and scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const animalNames = zooAnimals.map(function(zooAnimals){
-  return `Name: ${zooAnimals.animal_name}, Scientific: ${zooAnimals.scientific_name}`;
+const animalNames = [];
+zooAnimals.forEach(function(zooAnimals){
+  animalNames.push(`Name: ${zooAnimals.animal_name}, Scientific: ${zooAnimals.scientific_name}`);
 })
 console.log(animalNames);
 
