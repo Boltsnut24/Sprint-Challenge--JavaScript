@@ -17,11 +17,7 @@ class CuboidMaker2{
   }
 }
 
-const cuboid2 = new CuboidMaker2({
-  length: 4,
-  width: 5,
-  height: 5
-});
+const cuboid2 = new CuboidMaker2(4, 5,5);
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
  console.log(cuboid2.volume()); // 100
